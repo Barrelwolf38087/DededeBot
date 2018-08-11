@@ -36,6 +36,9 @@ async def on_message(message):
 
         if args[0] in commands.keys():
             commands[args[0]](args[1:])
+    
+    await client.send_message(client.get_channel("477258214379880448"), "-e621 king_dedede")
+    await client.send_message(client.get_channel("477258214379880448"), ":eggplant::dedede:")
 
 @client.event
 async def on_ready():
