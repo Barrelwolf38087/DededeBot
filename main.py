@@ -11,7 +11,7 @@ with open("token.txt", "r") as token_file:
     # We have to grab the first line
     # because a newline in the string will
     # cause cryptic errors, and nobody
-    # likes those.s
+    # likes those
     lines = token_file.read().splitlines()
     global TOKEN    
     TOKEN = lines[0]
@@ -29,8 +29,9 @@ async def on_message(message):
     if message.content == "!dedede":
         with open("dedede.jpg", "rb") as dedede_jpg:
             await client.send_file(message.channel, dedede_jpg, filename="Dedede.jpg", content="All hail our lord and savior")
+        return
     
-    if message.content.startswith("!d "):
+    if message.content.startswith("!d"):
         args = message.content[3:].split(" ")
 
         if args[0] in commands.keys():
